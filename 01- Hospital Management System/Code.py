@@ -43,6 +43,10 @@ patients=[]
 def add_patient():
     d={}
     d["Id"]= int(input("Enter patient Id:"))
+    for p in patients:
+        if p["Id"]==d["Id"]:
+            print("Patient ID already exists!")
+            return
     d["Name"]=input("Enter patient name:")
     d["Age"]=int(input("Enter patient age:"))
     d["Gender"]=input("Enter patient Gender:")
