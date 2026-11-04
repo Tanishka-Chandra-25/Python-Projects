@@ -13,7 +13,7 @@ while True:
     choice=int(input("Enter your choice:"))  
 
     if choice==1:  
-        print("Patient Management selected")  
+        patient_menu()  
 
     elif choice==2:  
         print("Doctor Management selected")  
@@ -38,3 +38,31 @@ while True:
         print("Invalid Choice")
 
 main_menu()
+
+patients=[]
+def patient_menu():
+    while True:
+        print("PATIENT MANAGEMENT\n")
+        print("1. Add Patient\n")
+        print("2. View all Patients\n")
+        print("3. Search Patient\n")
+        print("4. Update Patient\n")
+        print("5. Delete Patient\n")
+        print("6. Back to Main Menu\n")
+        ch=int(input(" Enter your choice:"))
+        if ch==1:
+            print("Add Patient ")
+        elif ch==2:
+            print("View all Patients")
+        elif ch==3:
+            print("Search Patient ")
+        elif ch==4:
+            print("Update Patient")
+        elif ch==5:
+            print("Delete Patient")
+        elif ch==6:
+            print(" Back to Menu")
+            break
+        else:
+            print("Invalid Choice")
+            
