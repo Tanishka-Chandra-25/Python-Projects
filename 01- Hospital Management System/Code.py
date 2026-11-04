@@ -40,6 +40,16 @@ while True:
 main_menu()
 
 patients=[]
+def add_patient():
+    d={}
+    d["Id"]= int(input("Enter patient Id:"))
+    d["Name"]=input("Enter patient name:")
+    d["Age"]=int(input("Enter patient age:"))
+    d["Gender"]=input("Enter patient Gender:")
+    d["Contact"]=int(input("Enter patient phone number:"))
+    d["Disease"]=input("Entee patient disease:")
+    patients.append(d)
+    
 def patient_menu():
     while True:
         print("PATIENT MANAGEMENT\n")
@@ -51,7 +61,7 @@ def patient_menu():
         print("6. Back to Main Menu\n")
         ch=int(input(" Enter your choice:"))
         if ch==1:
-            print("Add Patient ")
+            add_patient()
         elif ch==2:
             print("View all Patients")
         elif ch==3:
