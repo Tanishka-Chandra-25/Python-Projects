@@ -53,6 +53,13 @@ def add_patient():
     d["Contact"]=int(input("Enter patient phone number:"))
     d["Disease"]=input("Entee patient disease:")
     patients.append(d)
+
+def view_patient():
+    if not patients:
+        print("No patient found")
+        return
+    for t in patients:
+        print(t)
     
 def patient_menu():
     while True:
@@ -67,7 +74,7 @@ def patient_menu():
         if ch==1:
             add_patient()
         elif ch==2:
-            print("View all Patients")
+            view_patient()
         elif ch==3:
             print("Search Patient ")
         elif ch==4:
