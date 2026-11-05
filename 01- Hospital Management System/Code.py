@@ -60,6 +60,15 @@ def view_patient():
         return
     for t in patients:
         print(t)
+
+def search_patient():
+    id=int(input("Enter id:"))
+    for t in patients:
+        if t["Id"]==id:
+            print("Patient found")
+            print(t)
+            return
+    print("Patient not found")
     
 def patient_menu():
     while True:
@@ -76,13 +85,13 @@ def patient_menu():
         elif ch==2:
             view_patient()
         elif ch==3:
-            print("Search Patient ")
+            search_patient()
         elif ch==4:
             print("Update Patient")
         elif ch==5:
             print("Delete Patient")
         elif ch==6:
-            print(" Back to Menu")
+            print("Back to Menu")
             break
         else:
             print("Invalid Choice")
