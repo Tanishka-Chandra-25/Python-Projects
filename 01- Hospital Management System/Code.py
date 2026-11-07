@@ -69,6 +69,40 @@ def search_patient():
             print(t)
             return
     print("Patient not found")
+
+def update_patient():
+    id=int(input("Enter patient Id:"))
+
+    for t in patients:
+        if t["Id"]==id:
+
+            print("\nWhat do you want to update?")
+            print("1. Name")
+            print("2. Age")
+            print("3. Gender")
+            print("4. Contact")
+            print("5. Disease")
+
+            chc=int(input("Enter choice:"))
+
+            if chc==1:
+                t["Name"]=input("Enter name:")
+            elif chc == 2:
+                t["Age"]=int(input("Enter age:"))
+            elif chc == 3:
+                t["Gender"]=input("Enter gender:")
+            elif chc == 4:
+                t["Contact"]=input("Enter phone number:")
+            elif chc == 5:
+                t["Disease"]=input("Enter disease:")
+            else:
+                print("Invalid entry!")
+                return
+
+            print("Patient updated successfully!")
+            return
+
+    print("Patient not found.")
     
 def patient_menu():
     while True:
@@ -87,7 +121,7 @@ def patient_menu():
         elif ch==3:
             search_patient()
         elif ch==4:
-            print("Update Patient")
+            update_patient()
         elif ch==5:
             print("Delete Patient")
         elif ch==6:
