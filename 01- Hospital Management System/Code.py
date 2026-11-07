@@ -87,19 +87,30 @@ def update_patient():
 
             if chc==1:
                 t["Name"]=input("Enter name:")
-            elif chc == 2:
+            elif chc==2:
                 t["Age"]=int(input("Enter age:"))
-            elif chc == 3:
+            elif chc==3:
                 t["Gender"]=input("Enter gender:")
-            elif chc == 4:
+            elif chc==4:
                 t["Contact"]=input("Enter phone number:")
-            elif chc == 5:
+            elif chc==5:
                 t["Disease"]=input("Enter disease:")
             else:
                 print("Invalid entry!")
                 return
 
             print("Patient updated successfully!")
+            return
+
+    print("Patient not found.")
+
+def delete_patient():
+    id=int(input("Enter patient Id:"))
+
+    for t in patients:
+        if t["Id"]==id:
+            patients.remove(t)
+            print("Patient deleted successfully!")
             return
 
     print("Patient not found.")
@@ -123,7 +134,7 @@ def patient_menu():
         elif ch==4:
             update_patient()
         elif ch==5:
-            print("Delete Patient")
+            delete_patient()
         elif ch==6:
             print("Back to Menu")
             break
