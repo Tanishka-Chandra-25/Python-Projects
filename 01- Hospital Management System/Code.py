@@ -16,7 +16,7 @@ while True:
         patient_menu()  
 
     elif choice==2:  
-        print("Doctor Management selected")  
+        doctor_menu()
 
     elif choice==3:  
         print("Appointment Management selected")  
@@ -53,25 +53,6 @@ def add_patient():
     d["Contact"]=int(input("Enter patient phone number:"))
     d["Disease"]=input("Enter patient disease:")
     patients.append(d)
-
-doctors=[]
-def add_doctor():
-    d1={}
-
-    d1["Id"]=int(input("Enter doctor Id:"))
-
-    for d in doctors:
-        if d["Id"]==d1["Id"]:
-            print("Doctor ID already exists")
-            return
-
-    d1["Name"]=input("Enter doctor name:")
-    d1["Age"]=int(input("Enter doctor age:"))
-    d1["Gender"]=input("Enter doctor Gender:")
-    d1["Contact"]=input("Enter doctor phone number:")
-    d1["Department"]=input("Enter doctor department:")
-
-    doctors.append(d1)
 
 def view_patient():
     if not patients:
