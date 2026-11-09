@@ -51,8 +51,27 @@ def add_patient():
     d["Age"]=int(input("Enter patient age:"))
     d["Gender"]=input("Enter patient Gender:")
     d["Contact"]=int(input("Enter patient phone number:"))
-    d["Disease"]=input("Entee patient disease:")
+    d["Disease"]=input("Enter patient disease:")
     patients.append(d)
+
+doctors=[]
+def add_doctor():
+    d1={}
+
+    d1["Id"]=int(input("Enter doctor Id:"))
+
+    for d in doctors:
+        if d["Id"]==d1["Id"]:
+            print("Doctor ID already exists")
+            return
+
+    d1["Name"]=input("Enter doctor name:")
+    d1["Age"]=int(input("Enter doctor age:"))
+    d1["Gender"]=input("Enter doctor Gender:")
+    d1["Contact"]=input("Enter doctor phone number:")
+    d1["Department"]=input("Enter doctor department:")
+
+    doctors.append(d1)
 
 def view_patient():
     if not patients:
@@ -140,4 +159,23 @@ def patient_menu():
             break
         else:
             print("Invalid Choice")
+
+
+doctors=[]
+def add_doctor():
+    d1={}
+    d1["Id"]=int(input("Enter doctor Id:"))
+    
+    for d in doctors:
+        if d["Id"]==d1["Id"]:
+            print("Doctor ID already exists")
+            return
+            
+    d1["Name"]=input("Enter doctor name:")
+    d1["Age"]=int(input("Enter doctor age:"))
+    d1["Gender"]=input("Enter doctor Gender:")
+    d1["Contact"]=input("Enter doctor phone number:")
+    d1["Department"]=input("Enter doctor department:")
+
+    doctors.append(d1)
             
