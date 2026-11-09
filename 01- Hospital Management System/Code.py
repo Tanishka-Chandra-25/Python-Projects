@@ -178,4 +178,22 @@ def add_doctor():
     d1["Department"]=input("Enter doctor department:")
 
     doctors.append(d1)
+
+
+def doctor_menu():
+    while True:
+        if choice==1:
+            add_doctor()
+        elif choice==2:
+            print("View Doctor")
+        elif choice==3:
+            print("Search doctor")
+        elif choice==4:
+            print("Update doctor")
+        elif choice==5:
+            print("Delete doctor")
+        elif choice==6:
+            break
+        else:
+            print("Invalid choice")
             
