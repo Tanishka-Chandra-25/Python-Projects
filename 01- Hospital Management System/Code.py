@@ -96,13 +96,13 @@ def update_patient():
             elif chc==5:
                 t["Disease"]=input("Enter disease:")
             else:
-                print("Invalid entry!")
+                print("Invalid entry")
                 return
 
-            print("Patient updated successfully!")
+            print("Patient updated successfully")
             return
 
-    print("Patient not found.")
+    print("Patient not found")
 
 def delete_patient():
     id=int(input("Enter patient Id:"))
@@ -110,10 +110,10 @@ def delete_patient():
     for t in patients:
         if t["Id"]==id:
             patients.remove(t)
-            print("Patient deleted successfully!")
+            print("Patient deleted successfully")
             return
 
-    print("Patient not found.")
+    print("Patient not found")
     
 def patient_menu():
     while True:
@@ -160,19 +160,79 @@ def add_doctor():
 
     doctors.append(d1)
 
+def view_doctor():
+    if not doctors:
+        print("No doctor found")
+        return
+    for t in doctors:
+        print(t)
+
+def search_doctor():
+    id=int(input("Enter id:"))
+    for t in doctors:
+        if t["Id"]==id:
+            print("Doctor found")
+            print(t)
+            return
+    print("Doctor not found")
+
+def update_doctor():
+    id=int(input("Enter doctor Id:"))
+
+    for t in doctors:
+        if t["Id"]==id:
+
+            print("\nWhat do you want to update?")
+            print("1. Name")
+            print("2. Age")
+            print("3. Gender")
+            print("4. Contact")
+            print("5. Department")
+
+            chc=int(input("Enter choice:"))
+
+            if chc==1:
+                t["Name"]=input("Enter name:")
+            elif chc==2:
+                t["Age"]=int(input("Enter age:"))
+            elif chc==3:
+                t["Gender"]=input("Enter gender:")
+            elif chc==4:
+                t["Contact"]=input("Enter phone number:")
+            elif chc==5:
+                t["Department"]=input("Enter department:")
+            else:
+                print("Invalid entry")
+                return
+
+            print("Doctor updated successfully")
+            return
+
+    print("Doctor not found.")
+
+def delete_doctor():
+    id=int(input("Enter doctor Id:"))
+
+    for t in doctors:
+        if t["Id"]==id:
+            doctors.remove(t)
+            print("Doctor deleted successfully!")
+            return
+
+    print("Doctor not found")
 
 def doctor_menu():
     while True:
         if choice==1:
             add_doctor()
         elif choice==2:
-            print("View Doctor")
+            view_doctor()
         elif choice==3:
-            print("Search doctor")
+            search_doctor()
         elif choice==4:
-            print("Update doctor")
+            update_doctor()
         elif choice==5:
-            print("Delete doctor")
+            delete_doctor()
         elif choice==6:
             break
         else:
