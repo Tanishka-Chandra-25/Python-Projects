@@ -19,7 +19,7 @@ while True:
         doctor_menu()
 
     elif choice==3:  
-        print("Appointment Management selected")  
+        appointment_menu()
 
     elif choice==4:  
         print(" Billing Management selected")  
@@ -234,6 +234,36 @@ def doctor_menu():
         elif choice==5:
             delete_doctor()
         elif choice==6:
+            break
+        else:
+            print("Invalid choice")
+            
+
+appointments=[]
+
+def appointment_menu():
+    while True:
+        print("\nAPPOINTMENT MANAGEMENT\n")
+        print("1. Add Appointment")
+        print("2. View All Appointments")
+        print("3. Search Appointment")
+        print("4. Update Appointment")
+        print("5. Delete Appointment")
+        print("6. Back to Main Menu")
+
+        ch=int(input("Enter your choice:"))
+
+        if ch==1:
+            print("Add appointment")
+        elif ch==2:
+            print("View appointment")
+        elif ch==3:
+            print("Search appointment")
+        elif ch==4:
+            print("Update appointment")
+        elif ch==5:
+            print("Delete appointment")
+        elif ch==6:
             break
         else:
             print("Invalid choice")
