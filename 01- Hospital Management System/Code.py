@@ -241,6 +241,61 @@ def doctor_menu():
 
 appointments=[]
 
+
+def add_appointment():
+    app = int(input("Enter appointment ID:"))
+    
+    for t in appointments:
+        if t["Appointment ID"]==app:
+            print("Appointment ID already exists")
+            return
+
+    patient_id=int(input("Enter patient ID:"))
+
+    patient_found=False
+    for p in patients:
+        if p["Id"]==patient_id:
+            patient_found=True
+            break
+
+    if not patient_found:
+        print("Patient not found")
+        return
+
+    doctor_id=int(input("Enter doctor ID:"))
+
+    doctor_found=False
+    for d in doctors:
+        if d["Id"]==doctor_id:
+            doctor_found=True
+            break
+
+    if not doctor_found:
+        print("Doctor not found")
+        return
+
+    date=input("Enter date (DD-MM-YYYY):")
+    time=input("Enter time:")
+    
+    for t in appointments:
+        if (t["Patient ID"]==patient_id and
+            t["Doctor ID"]==doctor_id and
+            t["Date"]==date and
+            t["Time"]==time):
+            print("This appointment already exists")
+            return
+
+    appointment={}
+    appointment["Appointment ID"]=app
+    appointment["Patient ID"]=patient_id
+    appointment["Doctor ID"]=doctor_id
+    appointment["Date"]=date
+    appointment["Time"]=time
+
+    appointments.append(appointment)
+    print("Appointment stored successfully")
+    
+
 def appointment_menu():
     while True:
         print("\nAPPOINTMENT MANAGEMENT\n")
@@ -254,7 +309,7 @@ def appointment_menu():
         ch=int(input("Enter your choice:"))
 
         if ch==1:
-            print("Add appointment")
+            add_appointment()
         elif ch==2:
             print("View appointment")
         elif ch==3:
