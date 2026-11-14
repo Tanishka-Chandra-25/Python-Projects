@@ -295,7 +295,14 @@ def add_appointment():
     appointments.append(appointment)
     print("Appointment stored successfully")
     
+def view_appointment():
+    if not appointments:
+        print("No appointment found")
+        return
 
+    for t in appointments:
+        print(t)
+        
 def appointment_menu():
     while True:
         print("\nAPPOINTMENT MANAGEMENT\n")
@@ -311,7 +318,7 @@ def appointment_menu():
         if ch==1:
             add_appointment()
         elif ch==2:
-            print("View appointment")
+            view_apppointment()
         elif ch==3:
             print("Search appointment")
         elif ch==4:
