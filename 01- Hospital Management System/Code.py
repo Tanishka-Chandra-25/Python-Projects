@@ -302,6 +302,26 @@ def view_appointment():
 
     for t in appointments:
         print(t)
+
+def search_appointment():
+    app=int(input("Enter appointment ID:"))
+
+    for t in appointments:
+        if t["Appointment ID"]==app:
+            print("Appointment found")
+            print(t)
+            return
+    print("Appointment not found")
+
+def delete_appointment():
+    app=int(input("Enter appointment Id:"))
+
+    for t in appointments:
+        if t[" Appointment Id"]==app:
+            appointments.remove(t)
+            print("Appointment deleted successfully!")
+            return
+    print("Appointment not found")
         
 def appointment_menu():
     while True:
@@ -320,7 +340,7 @@ def appointment_menu():
         elif ch==2:
             view_apppointment()
         elif ch==3:
-            print("Search appointment")
+            search_appointmemt()
         elif ch==4:
             print("Update appointment")
         elif ch==5:
