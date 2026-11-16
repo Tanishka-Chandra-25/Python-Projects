@@ -313,6 +313,32 @@ def search_appointment():
             return
     print("Appointment not found")
 
+def update_appointment():
+    app=int(input("Enter appointment ID:"))
+
+    for t in appointments:
+        if t["Appointment ID"]==app:
+
+            print("1. Time")
+            print("2. Date")
+
+            ch=int(input("Enter choice:"))
+
+            if ch==1:
+                t["Time"]=input("Enter time:")
+
+            elif ch==2:
+                t["Date"]=input("Enter date:")
+
+            else:
+                print("Invalid choice")
+                return
+
+            print("Appointment updated successfully")
+            return
+
+    print("Appointment not found")
+
 def delete_appointment():
     app=int(input("Enter appointment Id:"))
 
@@ -342,7 +368,7 @@ def appointment_menu():
         elif ch==3:
             search_appointmemt()
         elif ch==4:
-            print("Update appointment")
+            update_appointment()
         elif ch==5:
             print("Delete appointment")
         elif ch==6:
