@@ -370,7 +370,7 @@ def appointment_menu():
         elif ch==4:
             update_appointment()
         elif ch==5:
-            print("Delete appointment")
+            delete_appointment()
         elif ch==6:
             break
         else:
