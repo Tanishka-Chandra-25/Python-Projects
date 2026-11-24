@@ -22,7 +22,7 @@ while True:
         appointment_menu()
 
     elif choice==4:  
-        print(" Billing Management selected")  
+        billing_menu()
 
     elif choice==5:  
         print("Medicine Inventory selected")  
@@ -386,9 +386,35 @@ def add_bill():
         if b["Bill ID"]==bill_id:
             exists=True
             break
-
     if exists:
         print("Bill already exists")
         return
 
+
+def billing_menu():
+    while True:
+        print("Billing Management")
+        print("1. Add Bill")
+        print("2. View Bills")
+        print("3. Search Bill")
+        print("4. Update Bill")
+        print("5. Delete Bill")
+        print("6. Back to Main Menu")
+
+        choice=input("Enter your choice:")
+
+        if choice=="1":
+            add_bill()
+        elif choice=="2":
+            print("view_bill()")
+        elif choice=="3":
+            print("search_bill()")
+        elif choice=="4":
+            print("update_bill()")
+        elif choice=="5":
+            print("delete_bill()")
+        elif choice=="6":
+            break
+        else:
+            print("Invalid choice")
             
