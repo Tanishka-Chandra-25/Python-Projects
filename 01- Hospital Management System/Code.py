@@ -375,4 +375,20 @@ def appointment_menu():
             break
         else:
             print("Invalid choice")
+
+bills=[]
+
+def add_bill():
+    bill_id=int(input("Enter Bill ID:"))
+    exists=False
+
+    for b in bills:
+        if b["Bill ID"]==bill_id:
+            exists=True
+            break
+
+    if exists:
+        print("Bill already exists")
+        return
+
             
