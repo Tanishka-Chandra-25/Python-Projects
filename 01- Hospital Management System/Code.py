@@ -389,6 +389,20 @@ def add_bill():
     if exists:
         print("Bill already exists")
         return
+          
+    patient_id=int(input("Enter Patient ID: "))
+    exist=False
+
+    for p in patients:
+        if p["Id"]==patient_id:
+            exist=True
+            break
+
+    if not exist:
+        print("Patient does not exist")
+        return 
+
+  
 
 
 def billing_menu():
