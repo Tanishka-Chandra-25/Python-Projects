@@ -401,6 +401,29 @@ def add_bill():
     if not exist:
         print("Patient does not exist")
         return 
+     
+    bill_date=input("Enter bill date (DD-MM-YYYY): ")
+
+    consultation_fee=float(input("Enter consultation fee:"))
+    medicine_fee=float(input("Enter medicine fee:"))
+    other_fee=float(input("Enter other charges:"))
+    
+    total_fee=consultation_fee+medicine_fee+other_fee
+
+    status=input("Enter payment status (Paid/Pending):")
+
+    bill={
+        "Bill ID": bill_id,
+        "Patient ID": patient_id,
+        "Bill Date": bill_date,
+        "Consultation Fee": consultation_fee,
+        "Medicine Fee": medicine_fee,
+        "Other Charges": other_fee,
+        "Total Fee": total_fee,
+        "Payment Status": status
+    }
+    bills.append(bill)
+    print("Bill added successfully")   
 
   
 
